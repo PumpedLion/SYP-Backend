@@ -13,4 +13,4 @@ const catchAsync = (fn: AsyncRouteHandler) => {
   };
 };
 
-export default catchAsync;
+export default catchAsync;

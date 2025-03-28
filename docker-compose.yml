@@ -1,0 +1,17 @@
+
+
+services:
+  postgres:
+    container_name: med-life-db
+    image: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: dev
+      POSTGRES_DB: medlife
+      POSTGRES_PASSWORD: 1234
+
+volumes:
+  postgres_data:

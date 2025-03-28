@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-// import userRouter from './routers/userRouter';
+import userRouter from './routers/userRoutes';
 
 
 dotenv.config();
@@ -12,14 +12,15 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
   console.log(req.method);
-  res.send('This is the backend server of BloodBuddy, Whatsup visitor!!');
+  res.send('This is the backend server of MedLife!!');
 });
 
-// app.use('/api/users', userRouter);
+app.use('/api/users', userRouter);
  
 
-const PORT = parseInt(process.env.PORT as string, 10) || 3000;
-const HOST = '0.0.0.0';
+
+const PORT = 8000;
+const HOST = "localhost"; // Change from "0.0.0.0" to "localhost"
 
 app.listen(PORT, HOST, () => {
   console.log(`Server is running at http://${HOST}:${PORT}`);
